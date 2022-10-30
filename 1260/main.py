@@ -56,6 +56,4 @@ for node in asc_graph:
 
 print(*bfs(asc_graph, start_node))
 
-print(des_graph)
-print(asc_graph)
 
