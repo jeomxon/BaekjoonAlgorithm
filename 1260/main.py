@@ -1,3 +1,6 @@
+import copy
+
+
 def dfs(graph, start_node):
     visit = []
     stack = []
@@ -11,6 +14,7 @@ def dfs(graph, start_node):
             stack.extend(graph[node])
 
     return visit
+
 
 def bfs(graph, start_node):
     visit = []
@@ -38,17 +42,20 @@ for i in range(num_edge):
     graph[a].append(b)
     graph[b].append(a)
 
+des_graph = copy.deepcopy(graph)
 
-for node in graph:
-    graph[node].sort(reverse=True)
-
-des_graph = graph.copy()
+for node in des_graph:
+    des_graph[node].sort(reverse=True)
 
 print(*dfs(des_graph, start_node))
 
-for node in graph:
-    graph[node].sort()
+asc_graph = copy.deepcopy(graph)
 
-asd_graph = graph.copy()
+for node in asc_graph:
+    asc_graph[node].sort()
 
-print(*bfs(asd_graph, start_node))
+print(*bfs(asc_graph, start_node))
+
+print(des_graph)
+print(asc_graph)
+
