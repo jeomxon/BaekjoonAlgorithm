@@ -1,0 +1,2 @@
+col = int(input())
+
